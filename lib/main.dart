@@ -1,6 +1,7 @@
+
 import 'package:booking_bus_app/components/modules.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
+import 'components/color.dart';
 
 void main() => runApp(
 
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        buttonColor: Colours.magenta,
+        // buttonColor: Colours.magenta,
         textTheme: TextTheme(
-          title: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          // title: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         appBarTheme: AppBarTheme(
           color: Colours.darkBlue
@@ -45,8 +46,8 @@ class myApp extends StatefulWidget {
 class myAppState extends State<myApp> with SingleTickerProviderStateMixin {
   var _visible = true;
 
-  AnimationController animationController;
-  Animation<double> animation;
+  late AnimationController animationController;
+  late Animation<double> animation;
 
   startTime() async {
     var _duration = new Duration(seconds: 3);

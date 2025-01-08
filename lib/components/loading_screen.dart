@@ -4,7 +4,7 @@ class LoadingScreen extends StatefulWidget {
   bool loading;
 
   LoadingScreen({
-    @required this.loading
+    required this.loading
   });
 
   @override

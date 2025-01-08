@@ -10,7 +10,7 @@ class TimerVerification extends StatefulWidget {
 
 class TimerVerificationState extends State<TimerVerification> {
   int timers = 120;
-  Timer timer;
+  late Timer timer;
 
   @override
   void initState() {

@@ -13,7 +13,7 @@ class MyBooking extends StatefulWidget {
 class MyBookingState extends State<MyBooking> {
 
   void getBooking() async {
-    var conn = await http.get(AppUrl.APP_URL_BOOKING);
+    var conn = await http.get(AppUrl.APP_URL_BOOKING as Uri);
   }
 
   @override

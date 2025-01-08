@@ -3,7 +3,7 @@ import 'package:booking_bus_app/components/modules.dart';
 class ForgetPasswords extends StatefulWidget {
   String email;
   ForgetPasswords({
-    this.email,
+    required this.email,
   });
   @override
   State<StatefulWidget> createState() {

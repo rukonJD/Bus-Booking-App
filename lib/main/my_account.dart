@@ -9,7 +9,7 @@ class MyAccount extends StatefulWidget {
 }
 
 class MyAccountState extends State<MyAccount> {
-  File images;
+  late File images;
   var loads = true;
   var imageProfile = Image.asset("assets/images/imageprofile.jpg", width: 100.0, height: 100.0,);
   var names = Text("Names", style: TextStyle(fontWeight: FontWeight.w500),);
@@ -32,10 +32,10 @@ class MyAccountState extends State<MyAccount> {
         return AlertDialog(
           title: Text("Are you sure want to exit?", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
           actions: <Widget>[
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               Navigator.pop(context);
             }, child: Text("Yes")),
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               Navigator.pop(context);
             }, child: Text("No")),
           ],
@@ -48,10 +48,10 @@ class MyAccountState extends State<MyAccount> {
         return AlertDialog(
           title: Text("Are you sure want to change password?", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
           actions: <Widget>[
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               Navigator.of(context).pushReplacementNamed("change_password_verification");
             }, child: Text("Yes")),
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               Navigator.pop(context);
             }, child: Text("No")),
           ],
@@ -64,11 +64,11 @@ class MyAccountState extends State<MyAccount> {
       return AlertDialog(
         title: Text("Choose your image", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),),
         actions: <Widget>[
-          FlatButton(onPressed: (){
+          TextButton(onPressed: (){
             getImages(ImageSource.gallery);
             Navigator.pop(context);
           }, child: Text("Gallery")),
-          FlatButton(onPressed: (){
+          TextButton(onPressed: (){
             getImages(ImageSource.camera);
             Navigator.pop(context);
             }, child: Text("Camera")),

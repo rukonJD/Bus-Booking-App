@@ -10,7 +10,7 @@ class Register extends StatefulWidget {
 }
 
 class RegisterState extends State<Register> {
-  File _images;
+  File? _images;
   var defaultImage = "assets/images/imageprofile.jpg";
   var imagesources;
   TextEditingController username = new TextEditingController();
@@ -19,7 +19,7 @@ class RegisterState extends State<Register> {
   TextEditingController password = new TextEditingController();
 
   void getAccount() async {
-    var conn = await http.post("", body: {
+    var conn = await http.post("" as Uri, body: {
       "image_user" : _images == null ? defaultImage : _images,
       "register_user" : username,
       "email_user" : emails,
@@ -44,10 +44,10 @@ class RegisterState extends State<Register> {
         return AlertDialog(
           title: Text("Choose your image", style: TextStyle(fontWeight: FontWeight.bold , color: Colors.black), ),
           actions: <Widget>[
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               imagesources = ImageSource.gallery;
             }, child: Text("Gallery")),
-            FlatButton(onPressed: (){
+            TextButton(onPressed: (){
               imagesources = ImageSource.camera;
             }, child: Text("Camera")),
           ],
@@ -64,7 +64,7 @@ class RegisterState extends State<Register> {
             InkWell(
               child: _images == null ?
               Image.asset(defaultImage, width: 100.0, height: 100.0,) :
-              Image.file(_images, width: 100.0, height: 100.0,),
+              Image.file(_images!, width: 100.0, height: 100.0,),
               onTap: (){
                 notifImage();
               },
